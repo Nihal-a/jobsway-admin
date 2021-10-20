@@ -19,6 +19,9 @@ module.exports = {
         'primary': '#008FAE',
         'secondary': '#F6F6F6',
 
-    })
+    }),
+    variants: {
+      textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    },
   }
 }
