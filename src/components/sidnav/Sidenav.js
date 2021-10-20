@@ -1,11 +1,11 @@
 import React from 'react'
 import { Icon } from '@iconify/react';
-import {Link} from 'react-router-dom'
+
 
 
 function Sidenav() {
     return (
-        <div className="h-screen w-64 bg-white border-r-2 flex flex-col justify-between">
+        <div className="h-screen w-64 bg-white border-r-2 flex flex-col justify-between items-center">
         <a className="font-semibold text-xl mt-4">JobsWay.</a>
         
         <div className="flex items-start justify-start h-auto flex-col mx-16 mb-20">
