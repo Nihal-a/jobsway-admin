@@ -1,9 +1,27 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Icon } from '@iconify/react';
-
+import jwtDecode from 'jwt-decode';
+import {useHistory,useLocation} from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { LOGOUT } from '../../constants/actionTypes';
 
 
 function Sidenav() {
+    const [admin, setAdmin] = useState(JSON.parse(localStorage.getItem('profile')));
+    const history = useHistory()
+    const dispatch = useDispatch()
+    const location = useLocation()
+
+  
+    const logout = (e) => {
+      e.preventDefault()
+      dispatch({type : LOGOUT});
+      
+      history.push('/');
+      
+      setAdmin(null);
+    }
+
     return (
         <div className="h-screen w-64 bg-white border-r-2 flex flex-col justify-between items-center">
         <a className="font-semibold text-xl mt-4">JobsWay.</a>
@@ -25,7 +43,7 @@ function Sidenav() {
                     <Icon className="mr-3 text-xl" icon="bytesize:settings" />
                     <p className="text-lg font-light">Settings</p>    
                 </a>
-                <a href="" className="nav-items flex my-2 items-center justify-start">
+                <a href="" className="nav-items flex my-2 items-center justify-start" onClick={logout}>
                     <Icon className="mr-3 text-xl" icon="simple-line-icons:logout" />
                     <p className="text-lg font-light">Logout</p>    
                 </a>
