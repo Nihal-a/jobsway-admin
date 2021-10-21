@@ -1,14 +1,20 @@
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
-import Register from './pages/Register';
-
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-            {/* <Dashboard/> */}
-      {/* <Login/> */}
-      <Register /> 
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Dashboard/>
+          </Route>
+          <Route path="/login">
+            <Login/>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
