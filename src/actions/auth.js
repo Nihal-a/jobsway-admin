@@ -1,12 +1,12 @@
-import {  } from '../constants/actionTypes'
+import { SIGNIN } from '../constants/actionTypes'
 import * as api from '../api/index'
 
 export const signin = (formdata,history) => async (dispatch) => {
 
     try {
-        const res = await api.signin(formdata)
-        console.log(res);
-        if(res.data.email){
+        const {data} = await api.signin(formdata)
+        if(data.admin){
+            dispatch({type:SIGNIN,data})
             history.push('/')
         }else{
             history.push('/login',{Err: "Invalid Credentials"})
