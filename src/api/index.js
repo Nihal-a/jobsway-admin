@@ -2,4 +2,5 @@ import axios from 'axios'
 
 const API = axios.create({ baseURL:'http://localhost:5000'})
 
-export const fetchPost = () => axios.get()
+export const signin = (formData) => API.post('/signin',formData) 
+
