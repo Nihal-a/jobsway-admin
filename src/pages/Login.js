@@ -1,4 +1,5 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
+import { fetchPost } from '../api'
 
 const initialState = {email:'' , password:''}
 
