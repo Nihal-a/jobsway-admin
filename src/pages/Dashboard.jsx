@@ -7,31 +7,7 @@ import { LOGOUT } from '../constants/actionTypes';
 
 
 function Dashboard() {
-    const [admin, setAdmin] = useState(JSON.parse(localStorage.getItem('profile')));
-    const history = useHistory()
-    const dispatch = useDispatch()
-    const location = useLocation()
-  
-    useEffect(() => {
-      const token  = admin?.token;
-  
-      if(token){
-          const decodedToken = jwtDecode(token)
-          if (decodedToken.exp * 1000 < new Date().getTime()) logout();
-      }
-      setAdmin(JSON.parse(localStorage.getItem('profile')));
-    }, [location])
     
-    const logout = (e) => {
-        e.preventDefault()
-        dispatch({type : LOGOUT});
-        
-        history.push('/');
-        
-        setAdmin(null);
-      }
-  
-
     return (
         <div>
             <Sidenav/>

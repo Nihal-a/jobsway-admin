@@ -1,5 +1,4 @@
 import React,{useEffect, useState} from 'react'
-import { fetchPost, } from '../api'
 import { useDispatch } from 'react-redux'
 import { signin } from '../actions/auth'
 import {useHistory,useLocation} from 'react-router-dom'

@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { Icon } from '@iconify/react';
-import jwtDecode from 'jwt-decode';
-import {useHistory,useLocation} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { LOGOUT } from '../../constants/actionTypes';
 
@@ -10,7 +9,6 @@ function Sidenav() {
     const [admin, setAdmin] = useState(JSON.parse(localStorage.getItem('profile')));
     const history = useHistory()
     const dispatch = useDispatch()
-    const location = useLocation()
 
   
     const logout = (e) => {
