@@ -25,7 +25,11 @@ function VerifyCompany() {
           })
           .then((success) => {
             if (success) {
-                dispatch(verifyCompany(company._id,history))
+                dispatch(verifyCompany(company._id,history)).then(() => {
+                    swal("Compnay request has been approved", {
+                        icon: "success",
+                      });
+                })
             } else {
               swal("Request Cancelled!");
             }
