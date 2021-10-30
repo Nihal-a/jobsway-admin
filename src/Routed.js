@@ -5,6 +5,10 @@ import { useEffect, useState } from 'react';
 import jwtDecode from 'jwt-decode';
 import { useDispatch } from 'react-redux';
 import { LOGOUT } from './constants/actionTypes';
+import Companies from './pages/Companies';
+import VerifyCompany from './pages/VerifyCompany';
+import Users from './pages/Users';
+import Settings from './pages/Settings';
 
 function Routed() {
     const [admin, setAdmin] = useState(JSON.parse(localStorage.getItem('admin')));
@@ -22,8 +26,7 @@ function Routed() {
       setAdmin(JSON.parse(localStorage.getItem('admin')));
     }, [location])
     
-    const logout = (e) => {
-        e.preventDefault()
+    const logout = () => {
         dispatch({type : LOGOUT});
         
         history.push('/');
@@ -38,6 +41,18 @@ function Routed() {
         </Route>
         <Route path="/login">
           {admin ?  <Redirect to="/"/> :  <Login/> }
+        </Route>
+        <Route path="/companies">
+          {!admin ?  <Redirect to="/login"/> :  <Companies/> }
+        </Route>
+        <Route path="/users">
+          {!admin ?  <Redirect to="/login"/> :  <Users/> }
+        </Route>
+        <Route path="/settings">
+          {!admin ?  <Redirect to="/login"/> :  <Settings/> }
+        </Route>
+        <Route path="/verifycompany">
+          {!admin ?  <Redirect to="/login"/> :  <VerifyCompany/> }
         </Route>
       </Switch>
     )

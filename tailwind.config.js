@@ -13,11 +13,16 @@ module.exports = {
     textColor: {
       'primary': '#008FAE',
       'secondary': '#8B8B8B',
+      'white' : '#fff'
     },
     backgroundColor: theme => ({
         ...theme('colors'),
         'primary': '#008FAE',
         'secondary': '#F6F6F6',
+        'warning': '#BE7E01',
+        'dark': '#212121',
+        'success': '#00B512',
+        'danger': '#C30101',
 
     }),
     variants: {

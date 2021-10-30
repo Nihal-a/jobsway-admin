@@ -1,23 +1,35 @@
-import React,{useState,useEffect} from 'react'
+import React, { useEffect } from 'react'
 import Sidenav from '../components/sidnav/Sidenav'
-import jwtDecode from "jwt-decode";
-import { useHistory,useLocation} from 'react-router-dom'
-import { useDispatch } from 'react-redux';
-import { LOGOUT } from '../constants/actionTypes';
 import PageHeader from '../components/PageHeader/PageHeader';
 import CompnayRequestCard from '../components/CompnayRequestCard/CompnayRequestCard';
-
+import { getUnVerifiedCompanies } from '../actions/auth';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Dashboard() {
+
+    const dispatch = useDispatch()
+    const history = useHistory()
+    const unVerifiedCompanies = useSelector((state) => state.admin)
+
+    console.log(unVerifiedCompanies);
+
+    useEffect(() => {
+        console.log("Helooo");
+         dispatch(getUnVerifiedCompanies(history))
+    }, [])
     
     return (
         <div className="flex">
             <Sidenav/>
             <div className="w-full">
-                <PageHeader name="crossroads"/>
+                <PageHeader name="crossroads" desc="Welcome Back!"/>
                 <div className="mt-12 px-8 container w-full">
                     <h5 className="text-xl font-semibold text-dark mb-8">Company Requests :</h5>
-                    <CompnayRequestCard />
+                    {unVerifiedCompanies.map((company) => (
+                        <CompnayRequestCard name={company.companyName} details={company}/>
+                    ))}
                 </div>
             </div>
         </div>
