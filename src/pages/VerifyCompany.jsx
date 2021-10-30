@@ -2,15 +2,19 @@ import React,{useEffect} from 'react'
 import PageHeader from '../components/PageHeader/PageHeader'
 import Sidenav from '../components/sidnav/Sidenav'
 import Image from '../assets/images/google.png'
-import { Link } from 'react-router-dom'
+import { Link,useHistory} from 'react-router-dom'
 import { useLocation } from 'react-router'
 import swal from 'sweetalert';
+import { useDispatch } from 'react-redux'
+import { verifyCompany } from '../actions/company'
 
 
 function VerifyCompany() {
 
     const location = useLocation()
     const {company} = location.state
+    const dispatch = useDispatch()
+    const history = useHistory()
 
     const handleApprove = (e) => {
         e.preventDefault()
@@ -21,10 +25,7 @@ function VerifyCompany() {
           })
           .then((success) => {
             if (success) {
-                
-              swal("Compnay request has been approved", {
-                icon: "success",
-              });
+                dispatch(verifyCompany(company._id,history))
             } else {
               swal("Request Cancelled!");
             }

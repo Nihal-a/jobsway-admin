@@ -1,3 +1,4 @@
 export const SIGNIN = 'SIGNIN' 
 export const LOGOUT = 'LOGOUT' 
 export const UNVERIFIEDCOMPANIES = 'UNVERIFIED_COMPANIES' 
+export const VERIFIEDCOMPANY = 'VERIFIED_COMPANY' 

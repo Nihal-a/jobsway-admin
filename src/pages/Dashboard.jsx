@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Sidenav from '../components/sidnav/Sidenav'
 import PageHeader from '../components/PageHeader/PageHeader';
 import CompnayRequestCard from '../components/CompnayRequestCard/CompnayRequestCard';
-import { getUnVerifiedCompanies } from '../actions/auth';
+import { getUnVerifiedCompanies } from '../actions/company';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
