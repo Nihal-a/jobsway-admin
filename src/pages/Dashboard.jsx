@@ -13,10 +13,7 @@ function Dashboard() {
     const history = useHistory()
     const unVerifiedCompanies = useSelector((state) => state.admin)
 
-    console.log(unVerifiedCompanies);
-
     useEffect(() => {
-        console.log("Helooo");
          dispatch(getUnVerifiedCompanies(history))
     }, [])
     
