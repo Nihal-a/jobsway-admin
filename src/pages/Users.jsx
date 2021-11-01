@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PageHeader from '../components/PageHeader/PageHeader';
 import Sidenav from '../components/sidnav/Sidenav';
 import UserCard from '../components/UserCard/UserCard';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { getUsers } from '../actions/user';
 
 function Users() {
+
+    const dispatch = useDispatch()
+    const history = useHistory()
+
+    useEffect(() => {
+        dispatch(getUsers(history))
+    }, [])
+
     return (
         <div className="flex">
             <Sidenav/>
