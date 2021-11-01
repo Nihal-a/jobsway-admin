@@ -1,7 +1,6 @@
 import React,{useEffect} from 'react'
 import PageHeader from '../components/PageHeader/PageHeader'
 import Sidenav from '../components/sidnav/Sidenav'
-import Image from '../assets/images/google.png'
 import { Link,useHistory} from 'react-router-dom'
 import { useLocation } from 'react-router'
 import swal from 'sweetalert';
@@ -71,7 +70,7 @@ function VerifyCompany() {
                 <div className="mt-12 px-8 container w-full">
                     <h5 className="text-xl font-semibold text-dark mb-8">Company Details :</h5>
                     <div className="w-full h-40 flex items-center justify-center flex-col">
-                        <img src={Image} alt="Company logo" className="w-32 rounded-md shadow-xl bg-primary" />
+                        <img src={company.imgUrl} alt="Company logo" className="w-32 rounded-md shadow-xl bg-primary" />
                         <h4 className="mt-3 text-2xl font-semibold ">{company.companyName}</h4>
                     </div>
                     <div className="w-full h-30  mt-8 grid grid-cols-2 justify-items-center">

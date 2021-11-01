@@ -1,6 +1,5 @@
 import React from 'react'
 import CompanyCard from '../components/CompanyCard/CompanyCard'
-import CompnayRequestCard from '../components/CompnayRequestCard/CompnayRequestCard'
 import PageHeader from '../components/PageHeader/PageHeader'
 import Sidenav from '../components/sidnav/Sidenav'
 

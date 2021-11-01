@@ -1,8 +1,8 @@
 import React from 'react'
-import CompanyCard from '../components/CompanyCard/CompanyCard';
 import PageHeader from '../components/PageHeader/PageHeader';
 import Sidenav from '../components/sidnav/Sidenav';
 import UserCard from '../components/UserCard/UserCard';
+import CompanyCard from '../components/CompanyCard/CompanyCard'
 
 
 
