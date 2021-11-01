@@ -1,4 +1,4 @@
-import {  UNVERIFIEDCOMPANIES, VERIFIEDCOMPANY,VERIFIEDCOMPANIES} from "../constants/actionTypes"
+import {  UNVERIFIEDCOMPANIES, VERIFIEDCOMPANY,VERIFIEDCOMPANIES,REJECTEDCOMPANY} from "../constants/actionTypes"
 
 export default (state = [] , action) => {
 
@@ -8,6 +8,8 @@ export default (state = [] , action) => {
         case VERIFIEDCOMPANIES:
             return action.payload;
         case VERIFIEDCOMPANY:
+            return state.map((company) => company._id == action.payload._id ? action.payload : state);
+        case REJECTEDCOMPANY:
             return state.map((company) => company._id == action.payload._id ? action.payload : state);
         default:
             return state

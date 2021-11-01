@@ -5,7 +5,7 @@ import { Link,useHistory} from 'react-router-dom'
 import { useLocation } from 'react-router'
 import swal from 'sweetalert';
 import { useDispatch } from 'react-redux'
-import { verifyCompany } from '../actions/company'
+import { verifyCompany,rejectCompany } from '../actions/company'
 
 
 function VerifyCompany() {
@@ -45,15 +45,18 @@ function VerifyCompany() {
           })
           .then((success) => {
             if (success) {
-
                 swal("Write the reason for rejection :", {
                     content: "input",
                   })
                   .then((value) => {
-                    swal(`You typed: ${value}`);
-                    swal("Compnay request has been rejected", {
-                        icon: "success",
-                    });
+                    var obj = {
+                        reason : value
+                    }
+                    dispatch(rejectCompany(company._id,obj,history)).then(() => {
+                        swal("Compnay request has been rejected", {
+                            icon: "success",
+                        });
+                    })
                   });               
             } else {
               swal("Request Cancelled!");
