@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import PageHeader from '../components/PageHeader/PageHeader';
 import Sidenav from '../components/sidnav/Sidenav';
 import UserCard from '../components/UserCard/UserCard';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { getUsers } from '../actions/user';
 
@@ -10,6 +10,7 @@ function Users() {
 
     const dispatch = useDispatch()
     const history = useHistory()
+    const allUsers = useSelector(state => state.users)
 
     useEffect(() => {
         dispatch(getUsers(history))
@@ -32,9 +33,9 @@ function Users() {
                            <li className="ml-32">Action</li>
                        </ul>
                        <ul>
-                           <UserCard />
-                           <UserCard />
-                           <UserCard />
+                           {allUsers.map((user) => (
+                                <UserCard name={user?.name} location={user?.location} email={user?.email} phone={user?.phone} img={user?.imgUrl}/>
+                           ))}
                        </ul>
                     </div>
                 </div>

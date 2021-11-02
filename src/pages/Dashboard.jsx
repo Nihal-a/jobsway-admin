@@ -11,7 +11,7 @@ function Dashboard() {
 
     const dispatch = useDispatch()
     const history = useHistory()
-    const unVerifiedCompanies = useSelector((state) => state.admin)
+    const unVerifiedCompanies = useSelector((state) => state.company)
 
     useEffect(() => {
          dispatch(getUnVerifiedCompanies(history))

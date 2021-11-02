@@ -11,7 +11,7 @@ import { getVerifiedCompanies } from '../actions/company'
 
 function Companies() {
 
-    const companies = useSelector((state) => state.admin)
+    const companies = useSelector((state) => state.company)
     const dispatch = useDispatch()
     const history = useHistory()
 

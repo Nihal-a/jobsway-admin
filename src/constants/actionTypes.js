@@ -1,6 +1,12 @@
+//Auth
 export const SIGNIN = 'SIGNIN' 
 export const LOGOUT = 'LOGOUT' 
+
+//Company
 export const UNVERIFIEDCOMPANIES = 'UNVERIFIED_COMPANIES' 
 export const VERIFIEDCOMPANIES = 'VERIFIED_COMPANIES' 
 export const VERIFIEDCOMPANY = 'VERIFIED_COMPANY' 
 export const REJECTEDCOMPANY = 'REJECTED_COMPANY' 
+
+//Users
+export const ALLUSERS = 'ALL_USERS' 

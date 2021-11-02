@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux'
 import auth from './auth'
-import admin from './admin'
+import company from './company'
+import users from './users'
 
-export default combineReducers({auth,admin})
+export default combineReducers({auth,company,users})
