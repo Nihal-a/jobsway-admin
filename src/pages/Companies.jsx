@@ -20,8 +20,6 @@ function Companies() {
    }, [companies])
 
 
-   console.log(companies);
-
     return (
         <div className="flex">
             <Sidenav/>

@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PageHeader from '../components/PageHeader/PageHeader';
 import Sidenav from '../components/sidnav/Sidenav';
 import UserCard from '../components/UserCard/UserCard';
 import CompanyCard from '../components/CompanyCard/CompanyCard'
 import { useDispatch } from 'react-redux';
-
+import { getBannedCompanies } from '../actions/company';
+import { useSelector } from 'react-redux';
 
 function Settings() {
 
     const dispatch = useDispatch()
+    const bannedCompanies = useSelector(state => state.company)
 
-    // useEffect(() => {
-    //     dispatch(getBannedCompanies(),getBannedUsers())
-    // }, [])
+    useEffect(() => {
+        dispatch(getBannedCompanies())
+    }, [])
+
 
     return (
         <div className="flex">
@@ -22,7 +25,9 @@ function Settings() {
                 <div className="mt-12 px-8 container w-full">
                     <h5 className="text-xl font-semibold text-dark mb-8">Banned Companies :</h5>
                     <div className="grid grid-cols-3 gap-4 items-center">
-                        <CompanyCard unban={true}/>
+                        {bannedCompanies.map((company) => (
+                            <CompanyCard unban={true} name={company.companyName} location={company.location} img={company.imgUrl} id={company._id}/>
+                        ))}
                     </div>
                     <h5 className="text-xl font-semibold text-dark mb-8 mt-4">Banned Users :</h5>
                     <div className="w-full h-10 items-center">
