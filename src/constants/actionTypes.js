@@ -13,4 +13,5 @@ export const BANNEDCOMPANIES = 'BANNED_COMPANIES'
 //Users
 export const ALLUSERS = 'ALL_USERS' 
 export const BANNEDUSER = 'BANNED_USER' 
+export const BANNEDUSERS = 'BANNED_USERS' 
 

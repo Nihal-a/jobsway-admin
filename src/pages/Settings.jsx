@@ -6,16 +6,21 @@ import CompanyCard from '../components/CompanyCard/CompanyCard'
 import { useDispatch } from 'react-redux';
 import { getBannedCompanies } from '../actions/company';
 import { useSelector } from 'react-redux';
+import { getbannedUsers } from '../actions/user';
 
 function Settings() {
 
     const dispatch = useDispatch()
     const bannedCompanies = useSelector(state => state.company)
+    const bannedUsers = useSelector(state => state.users)
 
     useEffect(() => {
         dispatch(getBannedCompanies())
+        dispatch(getbannedUsers())
     }, [])
 
+
+    console.log(bannedUsers);
 
     return (
         <div className="flex">
@@ -40,7 +45,9 @@ function Settings() {
                            <li className="ml-32">Action</li>
                        </ul>
                        <ul>
-                           <UserCard unban={true}/>
+                           {bannedUsers.map((user) => (
+                                <UserCard unban={true} name={user?.name} location={user?.location} email={user?.email} phone={user?.phone} img={user?.imgUrl} id={user._id}/>
+                           ))}
                        </ul>
                     </div>
                 </div>
