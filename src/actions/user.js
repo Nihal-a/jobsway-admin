@@ -19,21 +19,3 @@ export const banUser = (id,history) => async (dispatch) => {
     }
 }
 
-// export const getBannedUsers = () => async (dispatch) => {
-//     try {
-//         const {data} = await api.getVerifiedCompanies()
-//         dispatch({type:VERIFIEDCOMPANIES ,payload :data})
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-// export const getBannedCompanies = () => async (dispatch) => {
-//     try {
-//         const {data} = await api.getVerifiedCompanies()
-//         dispatch({type:VERIFIEDCOMPANIES ,payload :data})
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-

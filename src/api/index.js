@@ -8,10 +8,12 @@ export const getUnVerifiedCompanies = () => API.get('/')
 export const getVerifiedCompanies = () => API.get('/companies') 
 export const verifyCompany = (id) => API.patch(`/company/approve?id=${id}`)
 export const rejectCompany = (id,reason) => API.patch(`/company/reject?id=${id}`,reason)
+export const banCompany = (id) => API.patch(`/company/ban?id=${id}`) 
 
 //users
 export const getUsers = () => API.get('/users') 
 export const banUser = (id) => API.patch(`/users/ban?id=${id}`) 
+
 
 
 

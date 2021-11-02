@@ -10,9 +10,9 @@ function Settings() {
 
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(getBannedCompanies(),getBannedUsers())
-    }, [])
+    // useEffect(() => {
+    //     dispatch(getBannedCompanies(),getBannedUsers())
+    // }, [])
 
     return (
         <div className="flex">

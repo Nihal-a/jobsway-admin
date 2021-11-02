@@ -17,7 +17,7 @@ function Companies() {
 
     useEffect(() => {
         dispatch(getVerifiedCompanies(history))
-   }, [])
+   }, [companies])
 
 
    console.log(companies);
@@ -31,7 +31,7 @@ function Companies() {
                     <h5 className="text-xl font-semibold text-dark mb-8">Companies :</h5>
                     <div className="grid grid-cols-3 gap-4 items-center">
                         {companies.map((company) => (
-                        <CompanyCard name={company.companyName} location={company.location} img={company.imgUrl}/>
+                        <CompanyCard name={company.companyName} location={company.location} img={company.imgUrl} id={company._id} />
                         ))}
                     </div>
                 </div>

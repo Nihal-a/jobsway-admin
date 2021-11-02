@@ -1,7 +1,41 @@
 import React from 'react'
 import { Icon } from '@iconify/react'
+import swal from 'sweetalert'
+import { useDispatch } from 'react-redux'
+import {useHistory} from 'react-router-dom'
+import { banCompany } from '../../actions/company'
 
-function CompanyCard({unban,name,location,img}) {
+function CompanyCard({unban,name,location,img,id}) {
+
+    const dispatch = useDispatch()
+    const history = useHistory()
+
+    const handleClick = (e) => {
+        e.preventDefault()
+        if(unban){
+            console.log("yess unban");
+        }else{
+            swal({
+                title: "Are you sure to Ban this User?",
+                text: "The user will be forbidden from login his account",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+                    dispatch(banCompany(id,history)).then(() => {
+                        swal("User was blocked Successfully", {
+                            icon: "success",
+                          });
+                    })
+                } else {
+                  swal("Request Cancelled");
+                }
+              });
+        }
+    }
+
     return (
         <div className="w-80 h-auto pt-8 bg-secondary rounded-lg flex flex-col items-center">
             <img src={img} alt="" className="w-16 h-16 rounded-lg mt-2" />
@@ -10,7 +44,7 @@ function CompanyCard({unban,name,location,img}) {
                 <Icon icon="akar-icons:location" className="text-dark"/><p className="text-dark font-light ml-1">{location}</p>
             </div>
             <div className="w-full m-2 flex justify-end">
-            <button className="px-6 py-1 bg-warning rounded-lg text-sm mr-2 text-white">{unban ? 'UnBan' : 'Ban'}</button>
+            <button onClick={handleClick} className="px-6 py-1 bg-warning rounded-lg text-sm mr-2 text-white">{unban ? 'UnBan' : 'Ban'}</button>
             </div>
         </div>
     )
