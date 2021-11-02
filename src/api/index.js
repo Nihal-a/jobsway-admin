@@ -11,6 +11,7 @@ export const rejectCompany = (id,reason) => API.patch(`/company/reject?id=${id}`
 
 //users
 export const getUsers = () => API.get('/users') 
+export const banUser = (id) => API.patch(`/users/ban?id=${id}`) 
 
 
 

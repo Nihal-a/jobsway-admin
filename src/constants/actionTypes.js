@@ -10,3 +10,5 @@ export const REJECTEDCOMPANY = 'REJECTED_COMPANY'
 
 //Users
 export const ALLUSERS = 'ALL_USERS' 
+export const BANNEDUSER = 'BANNED_USER' 
+

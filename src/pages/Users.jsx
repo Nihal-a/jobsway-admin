@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { getUsers } from '../actions/user';
 
+
 function Users() {
 
     const dispatch = useDispatch()
@@ -14,7 +15,7 @@ function Users() {
 
     useEffect(() => {
         dispatch(getUsers(history))
-    }, [])
+    }, [allUsers])
 
     return (
         <div className="flex">
@@ -34,7 +35,7 @@ function Users() {
                        </ul>
                        <ul>
                            {allUsers.map((user) => (
-                                <UserCard name={user?.name} location={user?.location} email={user?.email} phone={user?.phone} img={user?.imgUrl}/>
+                                <UserCard name={user?.name} location={user?.location} email={user?.email} phone={user?.phone} img={user?.imgUrl} id={user._id}/>
                            ))}
                        </ul>
                     </div>
