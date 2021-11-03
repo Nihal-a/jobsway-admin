@@ -16,8 +16,12 @@ function Settings() {
 
     useEffect(() => {
         dispatch(getBannedCompanies())
+    }, [bannedCompanies])
+
+
+    useEffect(() => {
         dispatch(getbannedUsers())
-    }, [])
+    }, [bannedUsers])
 
 
     console.log(bannedUsers);

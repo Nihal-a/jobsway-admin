@@ -3,7 +3,7 @@ import noProfile from '../../assets/images/noProfile.jpg'
 import { useDispatch } from 'react-redux';
 import swal from 'sweetalert';
 import {useHistory} from 'react-router-dom'
-import { banUser } from '../../actions/user';
+import { banUser,unBanUser} from '../../actions/user';
 
 
 function UserCard({unban,name,location,email,phone,imgUrl,id}) {
@@ -11,11 +11,30 @@ function UserCard({unban,name,location,email,phone,imgUrl,id}) {
     const dispatch = useDispatch()
     const history = useHistory()
 
-
     const handleClick = (e) => {
         e.preventDefault()
         if(unban){
-            console.log("yess unban");
+            console.log("hello");
+            swal({
+                title: "Are you sure to UnBan this User?",
+                text: "The user will be allowed to website",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+            console.log("heiiiririr");
+
+                    dispatch(unBanUser(id,history)).then(() => {
+                        swal("User was unblocked Successfully", {
+                            icon: "success",
+                          });
+                    })
+                } else {
+                  swal("Request Cancelled");
+                }
+              });
         }else{
             swal({
                 title: "Are you sure to Ban this User?",

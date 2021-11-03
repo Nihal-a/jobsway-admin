@@ -1,4 +1,4 @@
-import {  ALLUSERS,BANNEDUSER,BANNEDUSERS } from "../constants/actionTypes"
+import {  ALLUSERS,BANNEDUSER,BANNEDUSERS,UNBANNEDUSER} from "../constants/actionTypes"
 
 export default (state = [] , action) => {
 
@@ -8,6 +8,8 @@ export default (state = [] , action) => {
         case BANNEDUSERS:
             return action.payload;
         case BANNEDUSER:
+            return state.map((user) => user._id == user.payload._id ? user.payload : state);
+        case UNBANNEDUSER:
             return state.map((user) => user._id == user.payload._id ? user.payload : state);
         default:
             return state

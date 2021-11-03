@@ -13,7 +13,8 @@ export const bannedCompanies = (id) => API.get('/companies/banned')
 
 //users
 export const getUsers = () => API.get('/users') 
-export const banUser = (id) => API.patch(`/users/ban?id=${id}`) 
+export const banUser = (id) => API.patch(`/user/ban?id=${id}`) 
+export const unBanUser = (id) => API.patch(`/user/unban?id=${id}`) 
 export const getbannedUsers = () => API.get('/users/banned') 
 
 
