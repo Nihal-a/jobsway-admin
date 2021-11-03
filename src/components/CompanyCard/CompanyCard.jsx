@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react'
 import swal from 'sweetalert'
 import { useDispatch } from 'react-redux'
 import {useHistory} from 'react-router-dom'
-import { banCompany } from '../../actions/company'
+import { banCompany,unBanCompany } from '../../actions/company'
 
 function CompanyCard({unban,name,location,img,id}) {
 
@@ -13,11 +13,28 @@ function CompanyCard({unban,name,location,img,id}) {
     const handleClick = (e) => {
         e.preventDefault()
         if(unban){
-            console.log("yess unban");
+            swal({
+                title: "Are you sure to UnBan this Company?",
+                text: "The Company will be provided with the dashboard",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+                    dispatch(unBanCompany(id,history)).then(() => {
+                        swal("Company was unblocked Successfully", {
+                            icon: "success",
+                          });
+                    })
+                } else {
+                  swal("Request Cancelled");
+                }
+              });
         }else{
             swal({
-                title: "Are you sure to Ban this User?",
-                text: "The user will be forbidden from login his account",
+                title: "Are you sure to Ban this Company?",
+                text: "The Company will be forbidden from its Dashboard",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,

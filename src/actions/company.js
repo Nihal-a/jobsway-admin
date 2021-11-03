@@ -1,4 +1,4 @@
-import { UNVERIFIEDCOMPANIES, VERIFIEDCOMPANY,VERIFIEDCOMPANIES,REJECTEDCOMPANY,BANNEDCOMPANY,BANNEDCOMPANIES} from '../constants/actionTypes'
+import { UNVERIFIEDCOMPANIES, VERIFIEDCOMPANY,VERIFIEDCOMPANIES,REJECTEDCOMPANY,BANNEDCOMPANY,BANNEDCOMPANIES,UNBANNEDCOMPANY} from '../constants/actionTypes'
 import * as api from '../api/index'
 
 export const getUnVerifiedCompanies = (history) => async (dispatch) => {
@@ -44,6 +44,7 @@ export const banCompany = (id,history) => async (dispatch) => {
     try {
         const {data} = await api.banCompany(id)
         dispatch({type:BANNEDCOMPANY ,payload :data})
+        history.push('/companies')
     } catch (error) {
         console.log(error);
     }
@@ -53,6 +54,16 @@ export const getBannedCompanies = () => async (dispatch) => {
     try {
         const {data} = await api.bannedCompanies()
         dispatch({type:BANNEDCOMPANIES ,payload :data})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const unBanCompany = (id,history) => async (dispatch) => {
+    try {
+        const {data} = await api.unBanCompany(id)
+        dispatch({type:UNBANNEDCOMPANY ,payload :data})
+        history.push('/settings')
     } catch (error) {
         console.log(error);
     }

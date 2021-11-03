@@ -1,4 +1,4 @@
-import {  UNVERIFIEDCOMPANIES, VERIFIEDCOMPANY,VERIFIEDCOMPANIES,REJECTEDCOMPANY,BANNEDCOMPANY ,BANNEDCOMPANIES} from "../constants/actionTypes"
+import {  UNVERIFIEDCOMPANIES, VERIFIEDCOMPANY,VERIFIEDCOMPANIES,REJECTEDCOMPANY,BANNEDCOMPANY ,BANNEDCOMPANIES,UNBANNEDCOMPANY} from "../constants/actionTypes"
 
 export default (state = [] , action) => {
 
@@ -12,6 +12,8 @@ export default (state = [] , action) => {
         case REJECTEDCOMPANY:
             return state.map((company) => company._id == action.payload._id ? action.payload : state);
         case BANNEDCOMPANY:
+            return state.map((company) => company._id == action.payload._id ? action.payload : state);
+        case UNBANNEDCOMPANY:
             return state.map((company) => company._id == action.payload._id ? action.payload : state);
         case BANNEDCOMPANIES:
             return action.payload;
