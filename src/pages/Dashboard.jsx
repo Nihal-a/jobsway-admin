@@ -15,7 +15,7 @@ function Dashboard() {
 
     useEffect(() => {
          dispatch(getUnVerifiedCompanies(history))
-    }, [])
+    }, [unVerifiedCompanies])
     
     return (
         <div className="flex">

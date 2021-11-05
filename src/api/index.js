@@ -18,9 +18,6 @@ export const banUser = (id) => API.patch(`/user/ban?id=${id}`)
 export const unBanUser = (id) => API.patch(`/user/unban?id=${id}`) 
 export const getbannedUsers = () => API.get('/users/banned') 
 
-
-
-
 //Auth 
 export const signin = (formData) => API.post('/signin',formData) 
 
