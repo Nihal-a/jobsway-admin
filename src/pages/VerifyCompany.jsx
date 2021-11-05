@@ -7,7 +7,6 @@ import swal from 'sweetalert';
 import { useDispatch } from 'react-redux'
 import { verifyCompany,rejectCompany } from '../actions/company'
 
-
 function VerifyCompany() {
 
     const location = useLocation()
@@ -49,6 +48,8 @@ function VerifyCompany() {
                     content: "input",
                   })
                   .then((value) => {
+                    let valueCkeck =value.trim()                    
+                      if(valueCkeck === '') return swal("You need to include the reason to reject a company.")
                     var obj = {
                         reason : value
                     }
@@ -57,7 +58,7 @@ function VerifyCompany() {
                             icon: "success",
                         });
                     })
-                  });               
+                  })           
             } else {
               swal("Request Cancelled!");
             }
