@@ -11,6 +11,7 @@ export const rejectCompany = (id,reason) => API.patch(`/company/reject?id=${id}`
 export const banCompany = (id) => API.patch(`/company/ban?id=${id}`) 
 export const bannedCompanies = (id) => API.get('/companies/banned') 
 export const unBanCompany = (id) => API.patch(`/company/unban?id=${id}`) 
+export const getTransaction = () => API.get('/transactions') 
 
 //users
 export const getUsers = () => API.get('/users') 

@@ -9,6 +9,7 @@ import Companies from './pages/Companies';
 import VerifyCompany from './pages/VerifyCompany';
 import Users from './pages/Users';
 import Settings from './pages/Settings';
+import Transactions from './pages/Transactions';
 
 function Routed() {
     const [admin, setAdmin] = useState(JSON.parse(localStorage.getItem('admin')));
@@ -53,6 +54,9 @@ function Routed() {
         </Route>
         <Route path="/verifycompany">
           {!admin ?  <Redirect to="/login"/> :  <VerifyCompany/> }
+        </Route>
+        <Route path="/transactions">
+          {!admin ?  <Redirect to="/login"/> :  <Transactions /> }
         </Route>
       </Switch>
     )

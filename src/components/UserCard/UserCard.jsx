@@ -14,7 +14,6 @@ function UserCard({unban,name,location,email,phone,imgUrl,id}) {
     const handleClick = (e) => {
         e.preventDefault()
         if(unban){
-            console.log("hello");
             swal({
                 title: "Are you sure to UnBan this User?",
                 text: "The user will be allowed to website",

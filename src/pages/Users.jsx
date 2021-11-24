@@ -15,7 +15,7 @@ function Users() {
 
     useEffect(() => {
         dispatch(getUsers(history))
-    }, [allUsers])
+    }, [])
 
     return (
         <div className="flex">

@@ -37,6 +37,10 @@ function Sidenav() {
                     <Icon className="mr-3 text-xl" icon="clarity:users-line" />
                     <p className="text-lg font-light">Users</p>    
                 </Link>
+                <Link to="/transactions" className="nav-items flex my-2 items-center justify-start">
+                    <Icon className="mr-3 text-xl" icon="grommet-icons:transaction" />
+                    <p className="text-lg font-light">Transactions</p>    
+                </Link>
                 <Link to="/settings" className="nav-items flex my-2 items-center justify-start">
                     <Icon className="mr-3 text-xl" icon="bytesize:settings" />
                     <p className="text-lg font-light">Settings</p>    
