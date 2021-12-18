@@ -5,13 +5,9 @@ export const signin = (formdata,history) => async (dispatch) => {
 
     try {
         const {data} = await api.signin(formdata)
-        if(data.admin){
-            dispatch({type:SIGNIN,data})
-            history.push('/')
-        }else{
-            history.push('/login',{Err: "Invalid Credentials"})
-        }
+        dispatch({type:SIGNIN,data})
+        history.push('/')
     } catch (error) {
-        console.log("Signin err" +error);
+        history.push('/login',{Err: error.response.data})
     }
 }
