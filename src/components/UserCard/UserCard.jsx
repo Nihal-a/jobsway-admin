@@ -30,8 +30,6 @@ function UserCard({unban,name,location,email,phone,imgUrl,id}) {
                             icon: "success",
                           });
                     })
-                } else {
-                  swal("Request Cancelled");
                 }
               });
         }else{
@@ -49,8 +47,6 @@ function UserCard({unban,name,location,email,phone,imgUrl,id}) {
                             icon: "success",
                           });
                     })
-                } else {
-                  swal("Request Cancelled");
                 }
               });
         }

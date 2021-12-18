@@ -28,8 +28,6 @@ function VerifyCompany() {
                         icon: "success",
                       });
                 })
-            } else {
-              swal("Request Cancelled!");
             }
           });
     }
@@ -59,8 +57,6 @@ function VerifyCompany() {
                         });
                     })
                   })           
-            } else {
-              swal("Request Cancelled!");
             }
           });
     }

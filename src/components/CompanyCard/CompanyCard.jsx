@@ -27,8 +27,6 @@ function CompanyCard({unban,name,location,img,id}) {
                             icon: "success",
                           });
                     })
-                } else {
-                  swal("Request Cancelled");
                 }
               });
         }else{
@@ -46,8 +44,6 @@ function CompanyCard({unban,name,location,img,id}) {
                             icon: "success",
                           });
                     })
-                } else {
-                  swal("Request Cancelled");
                 }
               });
         }
