@@ -35,7 +35,7 @@ function Settings() {
                     <h5 className="text-xl font-semibold text-dark mb-8">Banned Companies :</h5>
                     <div className="grid grid-cols-3 gap-4 items-center">
                         {bannedCompanies.map((company) => (
-                            <CompanyCard unban={true} name={company.companyName} location={company.location} img={company.imgUrl} id={company._id}/>
+                            <CompanyCard unban={true} name={company.companyName} location={company.location} img={company.logoUrl} id={company._id}/>
                         ))}
                     </div>
                     <h5 className="text-xl font-semibold text-dark mb-8 mt-4">Banned Users :</h5>

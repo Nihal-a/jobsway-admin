@@ -6,6 +6,8 @@ import { getUnVerifiedCompanies } from '../actions/company';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
+import SmallLoadingSpinner from '../components/SmallLoadingSpinner/SmallLoadingSpinner';
 
 function Dashboard() {
 
@@ -14,8 +16,10 @@ function Dashboard() {
     const unVerifiedCompanies = useSelector((state) => state.company)
 
     useEffect(() => {
-         dispatch(getUnVerifiedCompanies(history))
-    }, [unVerifiedCompanies])
+         dispatch(getUnVerifiedCompanies())
+    }, [])
+
+
     
     return (
         <div className="flex">
@@ -24,7 +28,7 @@ function Dashboard() {
                 <PageHeader name="Nihal" desc="Welcome Back!"/>
                 <div className="mt-12 px-8 container w-full">
                     <h5 className="text-xl font-semibold text-dark mb-8">Company Requests :</h5>
-                    {unVerifiedCompanies.map((company) => (
+                    { unVerifiedCompanies.map((company) => (
                         <CompnayRequestCard name={company.companyName} details={company}/>
                     ))}
                 </div>

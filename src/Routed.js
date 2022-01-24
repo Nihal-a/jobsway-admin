@@ -29,10 +29,8 @@ function Routed() {
     
     const logout = () => {
         dispatch({type : LOGOUT});
-        
-        history.push('/');
-        
         setAdmin(null);
+        history.push('/');
     }
 
     return (
