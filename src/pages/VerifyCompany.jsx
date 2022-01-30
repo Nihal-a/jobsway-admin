@@ -104,11 +104,11 @@ function VerifyCompany() {
                                     <h6 className="mt-2 font-light text-xl">Instagram</h6>
                                 </div>
                                 <div className="flex flex-col items-start mt-2">
-                                    <Link className="underline mt-2 font-medium text-xl ml-8">{company.website}</Link>
-                                    <Link className="underline mt-2 font-medium text-xl ml-8">{company.linkedIn}</Link>
-                                    <Link className="underline mt-2 font-medium text-xl ml-8">{company.facebook}</Link>
-                                    <Link className="underline mt-2 font-medium text-xl ml-8">{company.twitter}</Link>
-                                    <Link className="underline mt-2 font-medium text-xl ml-8">{company.instagram}</Link>
+                                    <a target={'_blank'} href={company.website} className="underline mt-2 font-medium text-xl ml-8">{company.website}</a>
+                                    <a target={'_blank'} href={`https://www.linkedin.com/in/nihalavulan/${company.linkedIn}`} className="underline mt-2 font-medium text-xl ml-8">{company.linkedIn}</a>
+                                    <a target={'_blank'} href={`https://www.facebook.com/${company.facebook}`} className="underline mt-2 font-medium text-xl ml-8">{company.facebook}</a>
+                                    <a target={'_blank'} href={`https://twitter.com/${company.twitter}`} className="underline mt-2 font-medium text-xl ml-8">{company.twitter}</a>
+                                    <a target={'_blank'} href={`https://www.instagram.com/${company.instagram}`} className="underline mt-2 font-medium text-xl ml-8">{company.instagram}</a>
                                 </div>
                             </div>
                             <div className="mt-8 max-w-md">

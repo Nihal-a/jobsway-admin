@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "https://jobsway-admin.herokuapp.com/api/v1/admin/",
-  "homepage": "http://ec2-3-18-108-135.us-east-2.compute.amazonaws.com/",
+  "homepage": "https://nihalavulan.github.io/jobsway-admin",
   "dependencies": {
     "@craco/craco": "^6.3.0",
     "@testing-library/jest-dom": "^5.14.1",
