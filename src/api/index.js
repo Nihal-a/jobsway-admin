@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API = axios.create({ baseURL:'http://adminapi.jobsway.online/api/v1/admin'})
+const API = axios.create({ baseURL:'https://adminapi.jobsway.online/api/v1/admin'})
 // const API = axios.create({ baseURL:'http://localhost:4001/api/v1/admin/'})
 // const API = axios.create({ baseURL:'https://jobsway-admin.herokuapp.com/api/v1/admin/'})
 
